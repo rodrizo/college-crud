@@ -1,0 +1,56 @@
+﻿@model CRUDColegio.Models.AlumnoGrado;
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Registrar alumnos y grados</h3>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlumnoId" class="control-label"></label>
+                <input asp-for="AlumnoId" class="form-control" />
+                <span asp-validation-for="AlumnoId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GradoId" class="control-label"></label>
+                <input asp-for="GradoId" class="form-control" />
+                <span asp-validation-for="GradoId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Seccion" class="control-label"></label>
+                <input asp-for="Seccion" class="form-control" />
+                <span asp-validation-for="Seccion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Registrar</button>
+            </div>
+
+            <div class="container">
+                <button class="btn btn-dark" asp-controller="AlumnoGrado" asp-action="Index">Volver</button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+
+</div>
+
+@section Scripts{ 
+    @{ <partial name="_ValidationScriptsPartial" />}
+}

@@ -1,0 +1,55 @@
+﻿@model CRUDColegio.Models.AlumnoGrado 
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Eliminar alumnos y grados</h3>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <form method="post" asp-action="Delete">
+
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlumnoId" class="control-label"></label>
+                <input asp-for="AlumnoId" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GradoId" class="control-label"></label>
+                <input asp-for="GradoId" class="form-control" readonly />
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Seccion" class="control-label"></label>
+                <input asp-for="Seccion" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-danger" type="submit">Eliminar alumno y grado</button>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-dark"  asp-controller="AlumnoGrado" asp-action="Index">Volver</button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+
+</div>
+
+@section Scripts{ 
+    @{ <partial name="_ValidationScriptsPartial" />}
+}
